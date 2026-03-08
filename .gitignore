@@ -18,12 +18,8 @@
 mono_crash.*
 
 # Build results
-[Dd]ebug/
+AILearning/
 [Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
 [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
@@ -60,6 +56,7 @@ nunit-*.xml
 
 # Approval Tests result files
 *.received.*
+*.received
 
 # Build Results of an ATL Project
 [Dd]ebugPS/

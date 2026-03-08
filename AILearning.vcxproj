@@ -150,6 +150,8 @@
     <ClInclude Include="External\tensorflow\include\c\tf_tstring.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="PackageProject\PackageProject.py" />
+    <None Include="PackageProject\UnPackageProject.py" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
