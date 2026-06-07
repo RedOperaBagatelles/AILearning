@@ -24,31 +24,32 @@
     <ProjectGuid>{26403e65-649d-4157-8d0a-1139388074e4}</ProjectGuid>
     <RootNamespace>AILearning</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>AILearning</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -108,8 +109,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\hyuns\source\repos\AILearning\External\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>tensorflow.lib;cudnn64_8.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -126,14 +127,33 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\hyuns\source\repos\AILearning\External\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>tensorflow.lib;cudnn64_8.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AILearning.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MNIST\mnist.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="MNIST\MnistTensorflow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="External\tensorflow\include\core\platform\ctstring.h" />
+    <ClInclude Include="External\tensorflow\include\core\platform\ctstring_internal.h" />
+    <ClInclude Include="External\tensorflow\include\c\c_api.h" />
+    <ClInclude Include="External\tensorflow\include\c\c_api_experimental.h" />
+    <ClInclude Include="External\tensorflow\include\c\c_api_macros.h" />
+    <ClInclude Include="External\tensorflow\include\c\eager\c_api.h" />
+    <ClInclude Include="External\tensorflow\include\c\eager\c_api_experimental.h" />
+    <ClInclude Include="External\tensorflow\include\c\eager\dlpack.h" />
+    <ClInclude Include="External\tensorflow\include\c\tf_attrtype.h" />
+    <ClInclude Include="External\tensorflow\include\c\tf_datatype.h" />
+    <ClInclude Include="External\tensorflow\include\c\tf_file_statistics.h" />
+    <ClInclude Include="External\tensorflow\include\c\tf_status.h" />
+    <ClInclude Include="External\tensorflow\include\c\tf_tensor.h" />
+    <ClInclude Include="External\tensorflow\include\c\tf_tstring.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PackageProject\PackageProject.py" />
